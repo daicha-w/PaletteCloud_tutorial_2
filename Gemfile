@@ -43,6 +43,8 @@ gem 'html2slim'
 gem 'rails-controller-testing', '1.0.2'
 gem 'bcrypt', '3.1.12'
 gem 'faker'
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 gem 'will_paginate',           '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 
@@ -75,6 +77,7 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
+  gem 'fog'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
