@@ -28,4 +28,14 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
+
+  test "user id should be set to in_reply_to when reply" do
+    from_user = users(:michael)
+    log_in_as(from_user)
+    to_user = users(:archer)
+    unique_name = to_user.unique_name
+    content = "@#{unique_name} reply test"
+    post microposts_path, params: { micropost: { content: content } }
+    assert_equal to_user.id, Micropost.first.in_reply_to
+  end
 end

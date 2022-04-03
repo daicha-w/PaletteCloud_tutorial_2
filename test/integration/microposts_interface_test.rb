@@ -49,4 +49,27 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     get root_path
     assert_match "1 micropost", response.body
   end
+
+  test "reply should be shown only in feeds of the person who submitted it or the person to whom it was sent or users who follow the one who submitted it" do
+    from_user   = users(:michael)
+    to_user     = users(:archer)
+    other_user1 = users(:lana)
+    other_user2 = users(:john)
+    unique_name = to_user.unique_name
+    content = "@#{unique_name} reply test in integration test"
+    log_in_as(from_user)
+    post microposts_path, params: { micropost: { content: content } }
+    micropost_id = from_user.microposts.first.id
+    get root_path
+    assert_select "#micropost-#{micropost_id} span.content", text: content
+    log_in_as(to_user)
+    get root_path
+    assert_select "#micropost-#{micropost_id} span.content", text: content
+    log_in_as(other_user1)
+    get root_path
+    assert_select "#micropost-#{micropost_id} span.content", text: content
+    log_in_as(other_user2)
+    get root_path
+    assert_no_match "#micropost-#{micropost_id}", response.body
+  end
 end
