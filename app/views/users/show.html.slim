@@ -13,4 +13,4 @@
       h3 Microposts (#{@user.microposts.count})
       ol.microposts
         = render @microposts
-      = will_paginate @microposts
+      = will_paginate @microposts, previous_label: t('users.show.will_pagenate.previous_label'), next_label: t('users.show.will_pagenate.next_label')

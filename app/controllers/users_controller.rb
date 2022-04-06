@@ -20,9 +20,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash[:info] = t('users.create.info')
       redirect_to root_url
     else
+      flash[:error] = t('users.create.error')
       render :new
     end
   end
@@ -32,17 +33,22 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = t('users.update.success')
       redirect_to @user
     else
+      flash[:error] = t('users.update.error')
       render :edit
     end
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_to users_url
+    if User.find(params[:id]).destroy
+      flash[:success] = t('users.destroy.success')
+      redirect_to users_url
+    else
+      flash[:error] = t('users.destroy.error')
+      redirect_to users_url
+    end
   end
 
   def following

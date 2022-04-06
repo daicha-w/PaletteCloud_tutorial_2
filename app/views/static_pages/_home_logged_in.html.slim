@@ -7,5 +7,6 @@
     section.micropost_form
       = render 'shared/micropost_form'
   .col-md-8 
-    h3 Micropost Feed
+    h3 
+      = t('static_pages.home_logged_in.feed')
     = render 'shared/feed'

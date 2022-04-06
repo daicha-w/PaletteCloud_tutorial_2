@@ -2,6 +2,6 @@
 h1 
   = current_user.name
 span 
-  = link_to "view my profile", current_user
+  = link_to t('shared.user_info.profile'), current_user
 span 
-  = pluralize(current_user.microposts.count, "micropost")
+  = pluralize(current_user.microposts.count, t('shared.user_info.micropost'))

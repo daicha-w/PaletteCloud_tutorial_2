@@ -14,18 +14,23 @@ class MicropostsController < ApplicationController
     end
 
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = t('microposts.create.success')
       redirect_to root_url
     else
+      flash[:error] = t('microposts.create.error')
       @feed_items = []
       render 'static_pages/home'
     end
   end
 
   def destroy
-    @micropost.destroy
-    flash[:success] = "Micropost deleted"
-    redirect_back(fallback_location: root_url)
+    if @micropost.destroy
+      flash[:success] = t('microposts.destroy.success')
+      redirect_back(fallback_location: root_url)
+    else
+      flash[:error] = t('microposts.destroy.error')
+      render 'static_pages/home'
+    end
   end
 
   private

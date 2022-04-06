@@ -1,0 +1,11 @@
+en:
+  users:
+    edit:
+      button_text: "Save changes"
+      change: "change"
+    new:
+      button_text: "Create my account"
+    show:
+      will_pagenate:
+        previous_label: "< prev"
+        next_label: "next >"

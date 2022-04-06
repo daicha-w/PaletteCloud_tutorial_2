@@ -1,0 +1,19 @@
+ja:
+  shared:
+    error_messages:
+      alert: "フォームに %{error}個のエラーがあります"
+      error: ""
+    feed:
+      will_pagenate:
+        previous_label: "< 前へ"
+        next_label: "次へ >"
+    micropost_form:
+      placeholder: "いま、どうしてる？"
+      filesizelimit: "ファイルサイズの上限は5MBです。"
+      post: "投稿する"
+    stats:
+      followers: "フォロワー"
+      following: "フォロー"
+    user_info:
+      profile: "プロフィール"
+      micropost: "投稿"

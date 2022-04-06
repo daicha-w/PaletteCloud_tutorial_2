@@ -1,5 +1,5 @@
 - provide(:title, "Edit user")
-- provide(:button_text, 'Save changes')
+- provide(:button_text, t('users.edit.button_text'))
 - provide(:url, user_path(@user))
 h1 Update your profile
 
@@ -10,4 +10,4 @@ h1 Update your profile
     .gravatar_edit
       = gravatar_for @user
       a href="http://gravatar.com/emails" target="_blank"
-        | change
+        = t('users.edit.change')

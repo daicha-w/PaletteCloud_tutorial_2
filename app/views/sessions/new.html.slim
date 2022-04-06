@@ -8,14 +8,15 @@ h1 Log in
 
       = f.label :password
       |  
-      = link_to "(forgot password)", new_password_reset_path
+      = link_to t('sessions.new.forgot_password'), new_password_reset_path
       = f.password_field :password, class: 'form-control'
 
       = f.label :remember_me, class: "checkbox inline" do
         = f.check_box :remember_me
-        span Remember me on this computer
+        span 
+          = t('sessions.new.remember_me_on_this_computer')
 
-      = f.submit "Log in", class: "btn btn-primary"
+      = f.submit t('sessions.new.login'), class: "btn btn-primary"
     p 
-      | New user? 
-      =  link_to "Sign up now!", signup_path
+      = t('sessions.new.new_user')
+      = link_to t('sessions.new.signup'), signup_path

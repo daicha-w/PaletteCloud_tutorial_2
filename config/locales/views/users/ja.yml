@@ -1,0 +1,11 @@
+ja:
+  users:
+    edit:
+      button_text: "変更を保存する"
+      change: "変更"
+    new:
+      button_text: "アカウントを作成する"
+    show:
+      will_pagenate:
+        previous_label: "< 前へ"
+        next_label: "次へ >"

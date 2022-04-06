@@ -1,0 +1,8 @@
+ja:
+  sessions:
+    new:
+      forgot_password: "(パスワードを忘れた方はこちら)"
+      login: "ログイン"
+      signup: "登録"
+      remember_me_on_this_computer: "このコンピュータに記憶する"
+      new_user: "アカウントをお持ちでありませんか？"
