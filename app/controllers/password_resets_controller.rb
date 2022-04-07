@@ -15,7 +15,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = t('password_resets.create.danger')
-      render 'new'
+      render :new
     end
   end
 
@@ -25,7 +25,7 @@ class PasswordResetsController < ApplicationController
   def update
     if params[:user][:password].empty?
       @user.errors.add(:password, :blank)
-      render 'edit'
+      render :edit
     elsif @user.update_attributes(user_params)
       log_in @user
       @user.update_attribute(:reset_digest, nil)
@@ -33,7 +33,7 @@ class PasswordResetsController < ApplicationController
       redirect_to @user
     else
       flash[:error] = t('password_resets.update.error')
-      render 'edit'
+      render :edit
     end
   end
 
