@@ -1,0 +1,6 @@
+ja:
+  static_pages:
+    home_logged_in:
+      feed: "フィード"
+    home_not_logged_in:
+      signup: "登録"

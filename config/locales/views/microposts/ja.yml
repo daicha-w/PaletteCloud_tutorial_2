@@ -1,0 +1,5 @@
+ja:
+  microposts:
+    micropost:
+      timestamp: "投稿:%{time}前 "
+      delete: "削除"

@@ -1,0 +1,9 @@
+- if object.errors.any?
+  #error_explanation 
+    .alert.alert-danger 
+      = t('shared.error_messages.alert', 
+      error: pluralize(object.errors.count, t('shared.error_messages.error'))) 
+    ul 
+      - object.errors.full_messages.each do |msg|
+        li 
+          = msg

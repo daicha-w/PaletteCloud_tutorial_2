@@ -1,0 +1,44 @@
+# モデルは全て activerecord 以下に記述する。
+# これにより、User.model_name.human / User.human_attribute_name({attr_name})で使用可能。
+
+ja:
+  account_activations:
+    edit:
+      success: "アカウントが有効化されました。"
+      danger: "無効なリンクです。"
+  application:
+    logged_in_user:
+      danger: "ログインしてください。"
+  microposts:
+    create:
+      success: "投稿しました。"
+      error: "投稿に失敗しました。"
+    destroy:
+      success: "投稿を削除しました。"
+      error: "投稿の削除に失敗しました。"
+  password_resets:
+    create:
+      info: "パスワードリセット用のメールが送信されました。"
+      danger: "入力したメールアドレスが存在しません。"
+    update:
+      success: "パスワードがリセットされました。"
+      error: "パスワードのリセットに失敗しました。"
+  sessions:
+    create:
+      warning: "アカウントが有効化されていません。メールを確認してアカウントを有効化してください。"
+      danger: "メールアドレスまたはパスワードが間違っています。"
+  users:
+    create:
+      info: "メールを確認してアカウントを有効化してください。"
+      error: "アカウントの作成に失敗しました。"
+    update: 
+      success: "プロフィールが更新されました。"
+      error: "プロフィールの更新に失敗しました。"
+    destroy:
+      success: "ユーザーが削除されました。"
+      error: "ユーザーの削除に失敗しました。"
+  validators:
+    email_format:
+      message: "の形式が不正です"
+    unique_name_format:
+      message: "の形式が不正です"

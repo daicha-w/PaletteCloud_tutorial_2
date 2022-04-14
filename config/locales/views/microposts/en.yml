@@ -1,0 +1,5 @@
+en:
+  microposts:
+    micropost:
+      timestamp: Posted %{time} ago. 
+      delete: "delete"

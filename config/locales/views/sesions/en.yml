@@ -1,0 +1,7 @@
+en:
+  sessions:
+    new:
+      forgot_password: "(forgot password)"
+      login: "Log in"
+      remember_me_on_this_computer: "Remember me on this computer"
+      signup: "Sign up now!"

@@ -1,0 +1,6 @@
+en:
+  static_pages:
+    home_logged_in:
+      feed: "Feed"
+    home_not_logged_in:
+      signup: "Sign up now!"
