@@ -10,7 +10,7 @@ class MicropostsController < ApplicationController
 
     if reply_user_unique_name
       reply_user = User.find_by(unique_name: reply_user_unique_name)
-      @micropost.in_reply_to = reply_user.id if reply_user
+      @micropost.in_reply_to = reply_user&.id if reply_user
     end
 
     if @micropost.save
