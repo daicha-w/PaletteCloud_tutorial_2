@@ -37,3 +37,8 @@ ja:
     destroy:
       success: "ユーザーが削除されました。"
       error: "ユーザーの削除に失敗しました。"
+  validators:
+    email_format:
+      message: "の形式が不正です"
+    unique_name_format:
+      message: "の形式が不正です"

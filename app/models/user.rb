@@ -9,10 +9,8 @@ class User < ApplicationRecord
   before_save   :downcase_unique_name
   before_create :create_activation_digest
   validates :name,  presence: true, length: { maximum: 50 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-  VALID_UNIQUE_NAME_REGEX = /\A[a-z0-9_]+\z/i
-  validates :unique_name, presence: true, length: { in: 5..15 }, format: { with: VALID_UNIQUE_NAME_REGEX }, uniqueness: { case_sensitive: false }
+  validates :email, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }, email_format: true
+  validates :unique_name, presence: true, length: { in: 5..15 }, uniqueness: { case_sensitive: false }, unique_name_format: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
